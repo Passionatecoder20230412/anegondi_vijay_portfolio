@@ -1,38 +1,219 @@
-.App {
+* {
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+}
+
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 90%; /* Use percentage for max-width */
+  margin: 0 auto;
+  padding: 0; /* Remove padding to avoid extra space */
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
   text-align: center;
+  margin-bottom: 1%; /* Use percentage for margin */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.photoBoxWrapper {
+  perspective: 1000px;
+  margin-bottom: 1%; /* Use percentage for margin */
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.photoBox {
+  padding-top: 5ch;
+  width: 30vw; /* Use viewport width for responsive image size */
+  height: 50vw; /* Maintain aspect ratio */
+  max-width: 300px; /* Optional max width */
+  max-height: 500px; /* Optional max height */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2), -10px -10px 15px rgba(255, 255, 255, 1rem);
+  border-radius: 1rem; /* Use rem for border radius */
+  overflow: hidden;
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.photo {
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem; /* Use rem for border radius */
+}
+
+.name {
+  font-size: 3rem; /* Use rem for font size */
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 1.5rem; /* Use rem for font size */
+  color: #777;
+  margin-top: 0;
+}
+
+.successMsg {
+  color: green;
+  margin-top: 1rem;
+}
+
+.errorMsg {
+  color: red;
+  margin-top: 1rem;
+}
+
+.stickyMenu {
+  position: sticky;
+  top: 0;
+  height: 12vw;
+  background-color: #2b78b7; /* Background color for the sticky menu */
+  z-index: 10; /* Ensure it stays above other content */
+  padding: 1%; /* Use percentage for padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+}
+
+.menuButton {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+}
+
+.bar {
+  height: 0.1rem; /* Use rem for height */
+  width: 10%; /* Use percentage for width */
+  background-color: #ffffff;
+  border-radius: 0.1rem; /* Use rem for border radius */
+  margin: 0.9%; /* Use rem for margin */
+}
+
+.navMenu {
+  display: none; /* Initially hidden */
+  flex-direction: row; /* Stack menu items vertically */
+  background-color: #f7f7f7;
+  /* Use percentage for padding */
+  border-radius: 2rem; /* Use rem for border radius */
+  margin-top: 1%; /* Use percentage for margin */
+}
+
+.navMenu.open {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* Show menu when open */
+}
+
+.navLink {
+  margin: 1%; /* Use percentage for margin */
+  cursor: pointer;
+  color: #292093;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem; /* Use rem for font size */
+}
+
+.section {
+  display: none; /* Hide all sections by default */
+  margin: 2%; /* Remove margin to avoid extra space */
+  padding-top: 10%; /* Use percentage for padding */
+  border: 1px solid #ddd; /* Optional border for visibility */
+  border-radius: 1rem; /* Use rem for border radius */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  transition: all 0.2s ease;
+  background-color: rgba(171, 29, 29, 0.2); /* Subtle red tint */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(32, 13, 140, 0.1);
+  border-radius: 10px;
+  padding: 12% 5% 5% 5%;
+  color: #333;
+  /* Smooth transition */
+}
+
+.section.active {
+  display: flex;
+  /* Show the active section */
+}
+
+.sectionTitle {
+  font-size: 2rem; /* Use rem for font size */
+  border-bottom: 2px solid #333;
+  padding-bottom: 1%; /* Use percentage for padding */
+  margin-bottom: 2%; /* Use percentage for margin */
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.listItem {
+  margin-bottom: 1%; /* Use percentage for margin */
+}
+
+.projectItem {
+  margin-bottom: 2%; /* Use percentage for margin */
+}
+
+.link {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 5%; /* Use percentage for margin */
+  font-size: 1rem; /* Use rem for font size */
+  color: #777;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%; /* Use percentage for max-width */
+  margin: 0 auto;
+}
+
+.label {
+  margin-bottom: 1%; /* Use percentage for margin */
+  font-weight: bold;
+}
+
+.input,
+.textarea {
+  width: 60vw;
+  padding: 2vh; /* Use percentage for padding */
+  margin-bottom: 2%; /* Use percentage for margin */
+  border-radius: 0.5rem; /* Use rem for border radius */
+  border: 1px solid #ccc;
+  font-size: 1rem; /* Use rem for font size */
+}
+
+.textarea {
+  min-height: 15vh; /* Use percentage for minimum height */
+}
+
+.button {
+  padding: 1% 2%; /* Use percentage for padding */
+  border: none;
+  border-radius: 0.5rem; /* Use rem for border radius */
+  background-color: #3498db; /* Button background color */
   color: white;
+  font-size: 1rem; /* Use rem for font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button:hover {
+  background-color: #2980b9; /* Darker shade on hover */
 }
