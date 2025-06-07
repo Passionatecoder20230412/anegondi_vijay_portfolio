@@ -142,6 +142,57 @@ function App() {
           <li className="listItem">Demonstrated ability to work independently, troubleshoot code, and learn modern development tools.</li>
         </ul>
       </section>
+      <section id="experience" className="section fullHeight">
+  <h2 className="sectionTitle">Technical Skills</h2>
+  <ul className="list">
+    <li className="listItem">
+      <a href="https://www.oracle.com/java/technologies/javase-certification.html" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/java-logo.png" alt="Java Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/javascript-logo.png" alt="JavaScript Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/html5-logo.png" alt="HTML5 Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/css3-logo.png" alt="CSS3 Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://reactjs.org/docs/getting-started.html" target="_blank" rel="noopener noreferrer">
+        <img src="/react.png" alt="React Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/git-logo.png" alt="Git Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/github-logo.png" alt="GitHub Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://vercel.com/docs" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/vercel-logo.png" alt="Vercel Logo" className="skillLogo" />
+      </a>
+    </li>
+    <li className="listItem">
+      <a href="https://code.visualstudio.com/docs" target="_blank" rel="noopener noreferrer">
+        <img src="/path/to/vscode-logo.png" alt="VS Code Logo" className="skillLogo" />
+      </a>
+    </li>
+  </ul>
+</section>
+
 
       <section id="skills" className="section fullHeight">
         <h2 className="sectionTitle">Skills</h2>
