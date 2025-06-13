@@ -1,67 +1,229 @@
 * {
-  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0; /* Remove default margin */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
 }
 
 .container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 90%; /* Use percentage for max-width */
+  
+  max-width: 90%;
   margin: 0 auto;
-  padding: 0; /* Remove padding to avoid extra space */
+  padding: 0;
   color: #333;
   line-height: 1.6;
 }
-.skillLogo {
-  width: 40px; /* Adjust size as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin: 10px; /* Space between logos */
-}
 
-
+/* Header Section */
 .header {
   text-align: center;
-  margin-bottom: 1%; /* Use percentage for margin */
+  margin-bottom: 1rem;
 }
 
 .photoBoxWrapper {
-  perspective: 1000px;
-  margin-bottom: 1%; /* Use percentage for margin */
+  perspective: 100;
   display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .photoBox {
-  padding-top: 5ch;
-  width: 30vw; /* Use viewport width for responsive image size */
-  height: 50vw; /* Maintain aspect ratio */
-  max-width: 300px; /* Optional max width */
-  max-height: 500px; /* Optional max height */
+  padding-top: 3ch;
+  width: 30vw;
+  height: 30vw;
+  max-width: 300px;
+  max-height: 500px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2), -10px -10px 15px rgba(255, 255, 255, 1rem);
-  border-radius: 1rem; /* Use rem for border radius */
+  border-radius: 1rem;
   overflow: hidden;
   background-color: #fff;
 }
 
 .photo {
   width: 100%;
-  height: 150%;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 1rem; /* Use rem for border radius */
+  border-radius: 1rem;
 }
 
 .name {
-  font-size: 3rem; /* Use rem for font size */
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .title {
-  font-size: 1.5rem; /* Use rem for font size */
+  font-size: 1.5rem;
   color: #777;
   margin-top: 0;
+}
+
+/* Menu */
+.stickyMenu {
+  position: sticky;
+  top: 0;
+  width:100%;
+  height: auto;
+  margin-top: 0;
+  
+  z-index:100;
+  
+  
+}
+
+.menuButton {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  height: 0.2rem;
+  width: 2.5rem;
+  background-color: #fa0707;
+  border-radius: 0.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.navMenu {
+  display: none; /* Initially hidden */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #f7f4f4e5;
+  padding: 1%;
+  border-radius:4dvw;
+  
+}
+
+.navMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  
+  
+  
+   /* Show when open */
+}
+
+.navLink {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: 500; /* Chancd ged from 50% to 500 */
+  font-size: 90%;
+  color: hsl(129, 68%, 45%);
+  font-family: 'Inter', sans-serif;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+  color: #ed077e;
+  transform: scale(0.95);
+}
+
+/* Section Style */
+.section {
+  display: none;
+  padding: 4% 5%;
+  border-radius: 1rem;
+  min-height: 80vh;
+  background-color: rgba(171, 29, 29, 0.08);
+  backdrop-filter: blur(10px);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Only active section is shown */
+.section.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+ 
+  
+}
+
+.listItem {
+  margin-bottom: 1rem;
+  
+}
+
+/* Projects */
+.projectItem {
+  margin-bottom: 2rem;
+}
+
+.link {
+  color: #1a0dab;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Contact Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.textarea {
+  min-height: 15vh;
+  min-width: 60vw;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
 }
 
 .successMsg {
@@ -74,152 +236,10 @@ body {
   margin-top: 1rem;
 }
 
-.stickyMenu {
-  position: sticky;
-  top: 0;
-  height: 12vw;
-  background-color: #2b78b7; /* Background color for the sticky menu */
-  z-index: 10; /* Ensure it stays above other content */
-  padding: 1%; /* Use percentage for padding */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
-}
-
-.menuButton {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-}
-
-.bar {
-  height: 0.1rem; /* Use rem for height */
-  width: 10%; /* Use percentage for width */
-  background-color: #ffffff;
-  border-radius: 0.1rem; /* Use rem for border radius */
-  margin: 0.9%; /* Use rem for margin */
-}
-
-.navMenu {
-  display: none; /* Initially hidden */
-  flex-direction: row; /* Stack menu items vertically */
-  background-color: #f7f7f7;
-  /* Use percentage for padding */
-  border-radius: 2rem; /* Use rem for border radius */
-  margin-top: 1%; /* Use percentage for margin */
-}
-
-.navMenu.open {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* Show menu when open */
-}
-
-.navLink {
-  margin: 1%; /* Use percentage for margin */
-  cursor: pointer;
-  color: #292093;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem; /* Use rem for font size */
-}
-
-.section {
-  display: none; /* Hide all sections by default */
-  margin: 2%; /* Remove margin to avoid extra space */
-  padding-top: 10%; /* Use percentage for padding */
-  border: 1px solid #ddd; /* Optional border for visibility */
-  border-radius: 1rem; /* Use rem for border radius */
-  min-height: 100vh; /* Full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  transition: all 0.2s ease;
-  background-color: rgba(171, 29, 29, 0.2); /* Subtle red tint */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(32, 13, 140, 0.1);
-  border-radius: 10px;
-  padding: 12% 5% 5% 5%;
-  color: #333;
-  /* Smooth transition */
-}
-
-.section.active {
-  display: flex;
-  /* Show the active section */
-}
-
-.sectionTitle {
-  font-size: 2rem; /* Use rem for font size */
-  border-bottom: 2px solid #333;
-  padding-bottom: 1%; /* Use percentage for padding */
-  margin-bottom: 2%; /* Use percentage for margin */
-}
-
-.list {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.listItem {
-  margin-bottom: 1%; /* Use percentage for margin */
-}
-
-.projectItem {
-  margin-bottom: 2%; /* Use percentage for margin */
-}
-
-.link {
-  color: #1a0dab;
-  text-decoration: none;
-}
-
+/* Footer */
 .footer {
   text-align: center;
-  margin-top: 5%; /* Use percentage for margin */
-  font-size: 1rem; /* Use rem for font size */
+  margin-top: 3rem;
+  font-size: 1rem;
   color: #777;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  max-width: 90%; /* Use percentage for max-width */
-  margin: 0 auto;
-}
-
-.label {
-  margin-bottom: 1%; /* Use percentage for margin */
-  font-weight: bold;
-}
-
-.input,
-.textarea {
-  width: 60vw;
-  padding: 2vh; /* Use percentage for padding */
-  margin-bottom: 2%; /* Use percentage for margin */
-  border-radius: 0.5rem; /* Use rem for border radius */
-  border: 1px solid #ccc;
-  font-size: 1rem; /* Use rem for font size */
-}
-
-.textarea {
-  min-height: 15vh; /* Use percentage for minimum height */
-}
-
-.button {
-  padding: 1% 2%; /* Use percentage for padding */
-  border: none;
-  border-radius: 0.5rem; /* Use rem for border radius */
-  background-color: #3498db; /* Button background color */
-  color: white;
-  font-size: 1rem; /* Use rem for font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #2980b9; /* Darker shade on hover */
 }

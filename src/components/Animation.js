@@ -1,28 +1,29 @@
 import React, { useEffect, useRef } from 'react';
-import './Animation.css'; // Import the Animation CSS
+import { useNavigate } from 'react-router-dom';
+import '../Animation.css'; // Adjust path if necessary
 
 const Animation = () => {
-  const audioRef = useRef(null); // Create a ref for the audio element
+  const audioRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Play audio after a short delay
       if (audioRef.current) {
         audioRef.current.play().catch(error => {
           console.error("Audio playback failed:", error);
         });
       }
-    }, 100); // Delay before starting audio (100ms)
+    }, 100); // Play audio after 100ms
 
     const redirectTimer = setTimeout(() => {
-      window.location.href = '#header'; // Redirect to the portfolio section
-    }, 9000); // 10 seconds
+      navigate('/'); // Redirect to the home page after animation
+    }, 9000); // Trigger after animation
 
     return () => {
-      clearTimeout(timer); // Cleanup timer on unmount
-      clearTimeout(redirectTimer); // Cleanup redirect timer on unmount
+      clearTimeout(timer);
+      clearTimeout(redirectTimer);
     };
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="animationContainer">
